@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="174dp"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rl_detail"
+        android:layout_width="match_parent"
+        android:layout_height="192dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@+id/iv_icon"
+            android:ellipsize="end"
+            android:gravity="center_vertical|left"
+            android:singleLine="true"
+            android:text="Come For The Science "
+            android:textColor="@color/text_color"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="6dp"
+            android:layout_toRightOf="@+id/iv_icon"
+            android:ellipsize="end"
+            android:gravity="center_vertical|left"
+            android:maxLines="2"
+            android:singleLine="true"
+            android:text="Sunday asdasdasdasdasdasdklhfpajhfdljhldfajkdfsaljladskjhd;HSALd;hf"
+            android:textColor="@color/text_des_color"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/tv_seemore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="29dp"
+            android:gravity="center"
+            android:text="SEE MORE >"
+            android:textColor="@color/text_see_more"
+            android:textSize="12sp" />
+    </RelativeLayout>
+</LinearLayout>

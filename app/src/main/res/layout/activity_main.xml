@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <Button
+        android:id="@+id/bt_listview"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="ListView" />
+
+    <Button
+        android:id="@+id/bt_recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="Recycleview" />
+
+
+    <Button
+        android:id="@+id/bt_singleview"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="Singleview" />
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:autoLink="web"
+        android:gravity="center"
+        android:text="Github: https://github.com/fushenghua/ShareMate"
+        android:textColor="@color/colorPrimaryDark"
+        android:textColorLink="@color/colorPrimaryDark"
+        android:textSize="12sp" />
+</LinearLayout>
