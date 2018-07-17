@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">VideoListPlayer</string>
+    <string name="discover">Discover</string>
+    <string name="family">Family</string>
 </resources>

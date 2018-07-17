@@ -6,10 +6,6 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <!--<include-->
-    <!--android:id="@+id/include_action_bar"-->
-    <!--layout="@layout/action_bar" />-->
-
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"

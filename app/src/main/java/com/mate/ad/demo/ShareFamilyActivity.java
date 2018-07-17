@@ -1,52 +1,75 @@
 package com.mate.ad.demo;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.LinearLayout;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.mate.ad.demo.adapter.CommonAdapter;
 import com.mate.ad.demo.adapter.ShareAdapter;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.mate.ad.demo.bean.FamilyBean;
 
 /**
  * create by fushenghua
  */
 public class ShareFamilyActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
-    private LinearLayout mBack;
-    private CommonAdapter commonAdapter;
-    List<VideoBean> dates = null;
+
+    private RecyclerView mRecyclerView;
+
+    private CommonAdapter<FamilyBean> mCommonAdapter;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_share);
+        setContentView(R.layout.activity_apps);
         initViews();
         initDatas();
+        initToolBar();
+    }
+
+    private void initToolBar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.family);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void initDatas() {
-        dates = new ArrayList<>();
-        VideoBean guidesBean = new VideoBean("You share", "", "");
-//        guidesBean.setName("You share");
-//        guidesBean.setDate("這是一個神奇的APP");
-        for (int i = 0; i < 5; i++) {
-            dates.add(guidesBean);
-        }
-        commonAdapter = new ShareAdapter(R.layout.holder_mate, dates);
+        mCommonAdapter = new ShareAdapter(R.layout.item_app, Utils.getApps());
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setAdapter(commonAdapter);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setAdapter(mCommonAdapter);
+        mCommonAdapter.setOnItemClickListener(new CommonAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                FamilyBean item = mCommonAdapter.getItem(position);
+                Uri uri = Uri.parse(item.url);
+                Intent intent = new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                intent.setData(uri);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initViews() {
-        recyclerView = findViewById(R.id.share_recyclerView);
-        mBack = findViewById(R.id.share_toolbar);
+        mRecyclerView = findViewById(R.id.share_recyclerView);
     }
+
 }

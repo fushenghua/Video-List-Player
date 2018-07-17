@@ -49,13 +49,13 @@ public class SingleVideoActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        mIconImage = findViewById(com.mate.ad.R.id.app_image);
-        mIconText = findViewById(com.mate.ad.R.id.app_name);
-        mAppDesc = findViewById(com.mate.ad.R.id.app_desc);
-        mTryButton = findViewById(com.mate.ad.R.id.app_download);
-        mVideoView2 = findViewById(com.mate.ad.R.id.videoView);
-        mVideoBg = findViewById(com.mate.ad.R.id.video_bg);
-        mVideoPause = findViewById(com.mate.ad.R.id.video_pause);
+        mIconImage = findViewById(R.id.app_image);
+        mIconText = findViewById(R.id.app_name);
+        mAppDesc = findViewById(R.id.app_desc);
+        mTryButton = findViewById(R.id.app_download);
+        mVideoView2 = findViewById(R.id.videoView);
+        mVideoBg = findViewById(R.id.video_bg);
+        mVideoPause = findViewById(R.id.video_pause);
         mTryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,7 +110,7 @@ public class SingleVideoActivity extends AppCompatActivity {
                 if (mVideoView2.isPlaying()) {
                     mVideoView2.pause();
                     mVideoPause.setVisibility(View.VISIBLE);
-                    mVideoPause.setImageResource(com.mate.ad.R.drawable.video_pause);
+                    mVideoPause.setImageResource(R.drawable.video_pause);
                 } else {
                     mVideoView2.resume();
                     mVideoPause.setVisibility(View.GONE);
@@ -127,7 +127,7 @@ public class SingleVideoActivity extends AppCompatActivity {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 mVideoPause.setVisibility(View.VISIBLE);
-                mVideoPause.setImageResource(com.mate.ad.R.drawable.video_start);
+                mVideoPause.setImageResource(R.drawable.video_start);
             }
 
             @Override

@@ -1,4 +1,4 @@
-package com.mate.ad.demo;
+package com.mate.ad.demo.bean;
 
 import com.mate.ad.demo.adapter.VideoRecycleViewAdapter;
 

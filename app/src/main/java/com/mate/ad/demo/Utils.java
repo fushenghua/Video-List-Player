@@ -2,6 +2,8 @@ package com.mate.ad.demo;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.mate.ad.demo.bean.FamilyBean;
+import com.mate.ad.demo.bean.VideoBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -855,8 +857,41 @@ public class Utils {
             "        }\n" +
             "    ]";
 
-    public static List<VideoBean> getData() {
+    public static String appsJson = "[\n" +
+            "    {\n" +
+            "        \"appName\": \"ShareMate\",\n" +
+            "        \"url\": \"https://github.com/fushenghua/ShareMate\",\n" +
+            "        \"desc\": \"Don't Dependencies on other SDKs to share the SDK. It's very simple\",\n" +
+            "        \"iconUrl\": \"https://raw.githubusercontent.com/fushenghua/ShareMate/master/app/src/main/res/mipmap-xxhdpi/ic_launcher.png\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"appName\": \"FastCleaner\",\n" +
+            "        \"url\": \"https://github.com/fushenghua/FastCleaner\",\n" +
+            "        \"desc\": \"FastCleaner ，SimilarPhoto相似图片清理、垃圾清理、内存加速stuck_out_tongue_closed_eyes\",\n" +
+            "        \"iconUrl\": \"https://raw.githubusercontent.com/fushenghua/FastCleaner/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"appName\": \"YouMate\",\n" +
+            "        \"url\": \"https://github.com/fushenghua/hexo-theme-apps\",\n" +
+            "        \"desc\": \"方便快速,提供的app下载官网页面\",\n" +
+            "        \"iconUrl\": \"https://raw.githubusercontent.com/fushenghua/ShareMate/master/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png\"\n" +
+            "    },\n" +
+            "    {\n" +
+            "        \"appName\": \"Video-List-Player\",\n" +
+            "        \"url\": \"https://github.com/fushenghua/Video-List-Player\",\n" +
+            "        \"desc\": \"Play video in ListView or RecyclerView\",\n" +
+            "        \"iconUrl\": \"https://raw.githubusercontent.com/fushenghua/Video-List-Player/master/app/src/main/res/mipmap-xxhdpi/ic_launcher.png\"\n" +
+            "    }\n" +
+            "]";
+
+    public static List<VideoBean> getVideos() {
         return new Gson().fromJson(dataJson, new TypeToken<ArrayList<VideoBean>>() {
         }.getType());
     }
+
+    public static List<FamilyBean> getApps() {
+        return new Gson().fromJson(appsJson, new TypeToken<ArrayList<FamilyBean>>() {
+        }.getType());
+    }
+
 }

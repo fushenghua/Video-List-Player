@@ -1,37 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+
     <ImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="20dp"
         android:layout_marginTop="20dp"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/ic_launcher"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/bt_listview"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="ListView" />
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_shape"
+        android:text="ListView"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/bt_recycleview"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="Recycleview" />
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_shape"
+        android:text="Recycleview"
+        android:textColor="@color/white" />
 
 
     <Button
-        android:id="@+id/bt_singleview"
+        android:id="@+id/bt_family_ad"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="Singleview" />
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/button_shape"
+        android:text="Family_Ad"
+        android:textColor="@color/white" />
 
 
     <TextView

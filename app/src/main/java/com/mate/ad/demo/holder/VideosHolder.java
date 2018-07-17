@@ -16,7 +16,7 @@ import com.mate.ad.demo.BuildConfig;
 import com.mate.ad.demo.GlobalConstant;
 import com.mate.ad.demo.R;
 import com.mate.ad.demo.SingleVideoActivity;
-import com.mate.ad.demo.VideoBean;
+import com.mate.ad.demo.bean.VideoBean;
 import com.mate.ad.demo.target.VideoLoadTarget;
 import com.mate.ad.demo.target.VideoLoadView;
 import com.mate.videolist.visibility.items.ListItem;
@@ -153,7 +153,6 @@ public class VideosHolder extends BaseViewHolder<VideoBean> implements VideoLoad
     @Override
     public void onBind(int position, final VideoBean videoBean) {
         reset();
-        Glide.with(itemView.getContext()).load(videoBean.coverImg).into(videoCover);
         mVideoName.setText(videoBean.videoTitle);
         videoView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -168,6 +167,7 @@ public class VideosHolder extends BaseViewHolder<VideoBean> implements VideoLoad
             }
         });
 
+        Glide.with(itemView.getContext()).load(videoBean.coverImg).into(videoCover);
         videoTarget.onResourceReady(videoBean.url);
     }
 

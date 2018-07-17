@@ -3,6 +3,7 @@ package com.mate.ad.demo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.bt_recycleview).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, ShareFamilyActivity.class));
+                startActivity(new Intent(MainActivity.this, FamilyVideoListActivity.class));
             }
         });
         findViewById(R.id.bt_listview).setOnClickListener(new View.OnClickListener() {
@@ -29,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        findViewById(R.id.bt_singleview).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.bt_family_ad).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SingleVideoActivity.class);
+                Intent intent = new Intent(MainActivity.this, ShareFamilyActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //                intent.putExtra(GlobalConstant.DESCRIPTION, guideBean.description);
 //                intent.putExtra(GlobalConstant.GPURL, guideBean.gpUrl);
@@ -45,5 +46,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        initToolBar();
+
+    }
+
+    private void initToolBar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.app_name);
+        setSupportActionBar(toolbar);
     }
 }

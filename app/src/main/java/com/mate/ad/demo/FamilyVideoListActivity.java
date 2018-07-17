@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.mate.ad.demo.adapter.VideoRecycleViewAdapter;
+import com.mate.ad.demo.bean.VideoBean;
 import com.mate.videolist.visibility.calculator.ListItemsVisibilityCalculator;
 import com.mate.videolist.visibility.calculator.SingleListViewItemActiveCalculator;
 import com.mate.videolist.visibility.scroll.RecyclerViewItemPositionGetter;
@@ -46,7 +47,7 @@ public class FamilyVideoListActivity extends AppCompatActivity {
         toolbar.setTitle(R.string.discover);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);//这2行是设置返回按钮的
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
@@ -61,13 +62,13 @@ public class FamilyVideoListActivity extends AppCompatActivity {
 
     private void initDatas() {
         mGuideDatas.clear();
-        mGuideDatas.addAll(Utils.getData());
+        mGuideDatas.addAll(Utils.getVideos());
         mGuideAdapter = new VideoRecycleViewAdapter(this, mGuideDatas, mRecyclerView);
         mRecyclerView.setAdapter(mGuideAdapter);
     }
 
     private void initViews() {
-        mRecyclerView = findViewById(com.mate.ad.R.id.recyclerView);
+        mRecyclerView = findViewById(R.id.recyclerView);
         mLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(mLayoutManager);
 //        mRecyclerView.addItemDecoration(new SpacesItemDecoration(10));

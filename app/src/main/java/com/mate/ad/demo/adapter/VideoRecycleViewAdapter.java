@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.mate.ad.demo.R;
-import com.mate.ad.demo.VideoBean;
+import com.mate.ad.demo.bean.VideoBean;
 import com.mate.ad.demo.holder.BaseViewHolder;
 import com.mate.ad.demo.holder.VideosHolder;
 import com.mate.videolist.visibility.items.ListItem;
@@ -36,7 +36,7 @@ public class VideoRecycleViewAdapter extends RecyclerView.Adapter<BaseViewHolder
     @Override
     public BaseViewHolder<VideoBean> onCreateViewHolder(ViewGroup parent, int viewType) {
         if (TYPE_VIDEO == viewType) {
-            View view = LayoutInflater.from(mContext).inflate(R.layout.holder_video, parent, false);
+            View view = LayoutInflater.from(mContext).inflate(R.layout.item_video, parent, false);
             VideosHolder holder = new VideosHolder(view, mContext);
             view.setTag(holder);
             return holder;
