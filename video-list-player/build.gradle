@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'com.novoda.bintray-release'
 android {
     compileSdkVersion 27
 
@@ -26,6 +26,14 @@ android {
         abortOnError false
     }
 
+}
+
+publish {
+    userOrg = 'fushenghua'
+    groupId = 'com.mate.video-list-player'
+    artifactId = 'video-list-player'
+    publishVersion = '1.0.0'
+    desc = 'Video-List-Player  Play video in ListView or RecyclerView. It\'s very simple'
 }
 
 dependencies {
