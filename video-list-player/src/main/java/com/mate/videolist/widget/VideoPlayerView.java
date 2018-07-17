@@ -75,7 +75,7 @@ public class VideoPlayerView extends FrameLayout
 
     private Context mContext;
 
-    private NiceTextureView mTextureView;
+    private VideoTextureView mTextureView;
 
     private FrameLayout mContainer;
 
@@ -142,10 +142,17 @@ public class VideoPlayerView extends FrameLayout
         }
     }
 
+    public void setMediaPlayer(MediaPlayer mediaPlayer) {
+        this.mMediaPlayer = mediaPlayer;
+    }
+
+    public MediaPlayer getMediaPlayer() {
+        return mMediaPlayer;
+    }
 
     private void initTextureView() {
         if (mTextureView == null) {
-            mTextureView = new NiceTextureView(mContext);
+            mTextureView = new VideoTextureView(mContext);
             mTextureView.setSurfaceTextureListener(this);
         }
 

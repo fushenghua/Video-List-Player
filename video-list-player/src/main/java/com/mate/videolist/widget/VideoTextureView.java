@@ -3,12 +3,12 @@ package com.mate.videolist.widget;
 import android.content.Context;
 import android.view.TextureView;
 
-public class NiceTextureView extends TextureView {
+public class VideoTextureView extends TextureView {
 
     private int videoHeight;
     private int videoWidth;
 
-    public NiceTextureView(Context context) {
+    public VideoTextureView(Context context) {
         super(context);
     }
 

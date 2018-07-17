@@ -26,34 +26,38 @@ import com.mate.videolist.widget.VideoPlayerView;
 public class VideosHolder extends BaseViewHolder<VideoBean> implements VideoLoadView, ViewPropertyAnimatorListener, ListItem {
     private static final String TAG = "VideosHolder";
 
-    public ImageView videoCover, mPlay;
-
-    public RelativeLayout mRlVideo;
-
-    public TextView mVideoName;
-
     private static final int STATE_IDLE = 0;
     private static final int STATE_ACTIVED = 1;
     private static final int STATE_DEACTIVED = 2;
-    private int videoState = STATE_IDLE;
-    private String videoLocalPath;
 
-    public VideoPlayerView videoView;
+    private ImageView videoCover, mPlay;
+
+    private RelativeLayout mRlVideo;
+
+    private TextView mVideoName;
+
+    private VideoPlayerView videoView;
+
     private final VideoLoadTarget videoTarget;
 
+    private String videoLocalPath;
+
     private Context mContext;
+
+    private int videoState = STATE_IDLE;
 
 
     public VideosHolder(View itemView, final Context context) {
         super(itemView);
+        this.mContext = context;
         videoView = itemView.findViewById(R.id.video_play);
         mRlVideo = itemView.findViewById(R.id.rl_video);
         videoCover = itemView.findViewById(R.id.iv_video);
         mPlay = itemView.findViewById(R.id.iv_play);
         mVideoName = itemView.findViewById(R.id.tv_video);
-        this.mContext = context;
         videoView.setAlpha(0);
         videoTarget = new VideoLoadTarget(this);
+
     }
 
     private void reset() {
@@ -103,12 +107,12 @@ public class VideosHolder extends BaseViewHolder<VideoBean> implements VideoLoad
     @Override
     public void videoResourceReady(String videoPath) {
         videoLocalPath = videoPath;
-        if (videoLocalPath != null) {
-            videoView.setDataSource(videoPath);
-            if (videoState == STATE_ACTIVED) {
-                videoView.start();
-            }
-        }
+//        if (videoLocalPath != null) {
+//            videoView.setDataSource(videoPath);
+//            if (videoState == STATE_ACTIVED) {
+//                videoView.start();
+//            }
+//        }
     }
 
     @Override

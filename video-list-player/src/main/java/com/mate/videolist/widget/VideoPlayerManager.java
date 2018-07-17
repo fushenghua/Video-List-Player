@@ -14,7 +14,7 @@ public class VideoPlayerManager {
         return VideoPlayerHolder.INSTANCE;
     }
 
-    public VideoPlayerView getCurrentNiceVideoPlayer() {
+    public VideoPlayerView getCurrentVideoPlayer() {
         return mVideoPlayer;
     }
 

@@ -104,8 +104,8 @@ public class FamilyVideoListActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-//        VideoPlayerManager.getInstance().resumeVideoPlayer();
-        mVideoVisibilityCalculator.onScrollStateIdle();
+        VideoPlayerManager.getInstance().resumeVideoPlayer();
+//        mVideoVisibilityCalculator.onScrollStateIdle();
 //        mVideoVisibilityCalculator.onScrolled(RecyclerView.SCROLL_STATE_IDLE);
 
     }
@@ -113,6 +113,6 @@ public class FamilyVideoListActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-//        VideoPlayerManager.getInstance().suspendVideoPlayer();
+        VideoPlayerManager.getInstance().suspendVideoPlayer();
     }
 }
